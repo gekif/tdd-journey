@@ -32,3 +32,4 @@ composer create-project --prefer-dist laravel/laravel tdd-journey "5.6.*"
 
 15. php artisan make:controller RecipeController
 
+16. php artisan make:test RecipeTest
