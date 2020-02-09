@@ -17,3 +17,9 @@ composer create-project --prefer-dist laravel/laravel tdd-journey "5.6.*"
 7. Fix JWT Generate
 
 8. Delete default test
+
+9. Modified user model
+
+10. php artisan make:controller AuthController
+
+11. php artisan make:test AuthTest
