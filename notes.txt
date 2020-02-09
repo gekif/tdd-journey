@@ -1,0 +1,7 @@
+1. Create Project
+composer create-project --prefer-dist laravel/laravel tdd-journey "5.6.*"
+
+2. On composer.json add, then composer update
+"require": {
+    "tymon/jwt-auth": "0.5.*"
+}
