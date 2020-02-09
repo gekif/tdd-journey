@@ -29,3 +29,6 @@ composer create-project --prefer-dist laravel/laravel tdd-journey "5.6.*"
 13. php artisan make:migration create_recipes_table
 
 14. php artisan make:model Recipe
+
+15. php artisan make:controller RecipeController
+
