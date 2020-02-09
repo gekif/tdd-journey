@@ -5,3 +5,7 @@ composer create-project --prefer-dist laravel/laravel tdd-journey "5.6.*"
 "require": {
     "tymon/jwt-auth": "0.5.*"
 }
+
+3. php artisan make:auth
+
+4. php artisan migrate
