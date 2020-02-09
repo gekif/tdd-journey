@@ -10,7 +10,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AuthTest extends TestCase
 {
-    use DatabaseMigrations;
+//    use DatabaseMigrations;
 
     /**
      * @test
