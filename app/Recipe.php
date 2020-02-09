@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Recipe extends Model
 {
     protected $fillable = [
-        'title',
-        'procedure'
+        'title', 'procedure'
     ];
-
 
     /**
      * The owner of this delicious recipe
@@ -18,8 +16,6 @@ class Recipe extends Model
      */
     public function publisher()
     {
-        return $this->belongsTo(User::class, 'publisher_id');
+        return $this->belongsTo(User::class,'publisher_id');
     }
-
-
 }

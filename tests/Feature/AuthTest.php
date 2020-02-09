@@ -3,21 +3,19 @@
 namespace Tests\Feature;
 
 use App\User;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AuthTest extends TestCase
 {
-//    use DatabaseMigrations;
 
     /**
      * @test
      * Test registration
      */
     public function testRegister(){
-        // User's data
+        //User's data
         $data = [
             'email' => 'test@gmail.com',
             'name' => 'Test',
@@ -25,19 +23,15 @@ class AuthTest extends TestCase
             'password_confirmation' => 'secret1234',
         ];
 
-        // Send post request
-        $response = $this->json('POST', route('api.register'),$data);
-
-        // Assert it was successful
+        //Send post request
+        $response = $this->json('POST',route('api.register'),$data);
+        //Assert it was successful
         $response->assertStatus(200);
-
-        // Assert we received a token
-        $this->assertArrayHasKey('token', $response->json());
-
-        // Delete data
-        User::where('email', 'test@gmail.com')->delete();
+        //Assert we received a token
+        $this->assertArrayHasKey('token',$response->json());
+        //Delete data
+        User::where('email','test@gmail.com')->delete();
     }
-
 
     /**
      * @test
@@ -48,22 +42,21 @@ class AuthTest extends TestCase
         //Create user
         User::create([
             'name' => 'test',
-            'email' => 'test@gmail.com',
+            'email'=>'test@gmail.com',
             'password' => bcrypt('secret1234')
         ]);
 
-        // Attempt login
+        //attempt login
         $response = $this->json('POST',route('api.authenticate'),[
             'email' => 'test@gmail.com',
             'password' => 'secret1234',
         ]);
-
-        // Assert it was successful and a token was received
+        //Assert it was successful and a token was received
         $response->assertStatus(200);
-        $this->assertArrayHasKey('token', $response->json());
-
-        // Delete the user
-        User::where('email', 'test@gmail.com')->delete();
+        $this->assertArrayHasKey('token',$response->json());
+        //Delete the user
+        User::where('email','test@gmail.com')->delete();
     }
+
 
 }
