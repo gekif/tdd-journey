@@ -35,7 +35,7 @@ class User extends Authenticatable
     }
 
 
-    // Return a key value array, containing any custom claims to be           added to the JWT.
+    // Return a key value array, containing any custom claims to be added to the JWT.
     public function getJWTCustomClaims()
     {
         return [];
