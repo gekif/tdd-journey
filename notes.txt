@@ -11,3 +11,5 @@ composer create-project --prefer-dist laravel/laravel tdd-journey "5.6.*"
 4. php artisan migrate
 
 5. Setup JWT
+
+6. php artisan jwt:generate
